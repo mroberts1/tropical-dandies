@@ -11,6 +11,19 @@ library(tidyverse)
 library(palmerpenguins)
 ```
 
+::: {.column-margin}
+
+<br><br><br><br><br>[Martin Roberts](https://mroberts.emerson.build/)\      
+[Department of Visual & Media Arts](https://emerson.edu/academics/academic-departments/visual-media-arts)\
+[Emerson College](https://emerson.edu)\
+Society for Cinema and Media Studies (SCMS) conference, Seattle\
+13-17 March 2019
+ 
+<br />[{{< fa regular envelope >}}](mailto:martin*roberts@emerson.edu) \| [{{< fa brands mastodon >}}](https://merveilles.town/@mroberts*vma) \| [{{< fa brands github >}}](https://github.com/mroberts1/) \| [{{< fa brands facebook >}}](https://facebook.com/mr05301) \| [{{< fa brands twitter >}}](https://twitter.com/dokoissho)
+
+:::
+
+
 ![](img/mcml.jpg){.lightbox description=">David Bowie and Ryūichi Sakamoto on the set of **Merry Christmas, Mr. Lawrence**"}
 
 ><small>*The flavour of the \[Eurasian\] continent which the Silk Road transverses, sophisticated Parisian elegance, Spanish passion, African energy, the marine flavor of the Caribbean, all of them are cooked up in a stew. Then this stew gets taken to America, the inclusive, all-embracing continent, where the final spices are added. Then, after, I wonder 'What will happen if I add one more spice?' This is what I have to do. I am almost obsessed by this conviction. In short, I let the music travel across the Pacific to add a drop of soy sauce to it. This is what I want to do. I name this form 'Soy Sauce Music'"*</small>
