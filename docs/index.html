@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.32">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Tropical Dandies</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-8e4b57fdf496f91262d20c3e56dcbf51.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-55ff9a39947c6f2f9f50ef132e24bcfd.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-8e4b57fdf496f91262d20c3e56dcbf51.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-601905f9297d1baef046fe564820d563.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-4580bd478f92e180b0951875d74f3242.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-601905f9297d1baef046fe564820d563.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+
+<link rel="stylesheet" href="custom.scss">
+</head>
+
+<body class="quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    </div>
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Tropical Dandies</h1>
+<p class="subtitle lead">‘Merry Christmas, Mr.&nbsp;Lawrence’, Exoticism, and Popular Music</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p><a href="img/mcml.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" data-glightbox="description: .lightbox-desc-1;"><img src="img/mcml.jpg" class="img-fluid"></a></p>
+<blockquote class="blockquote">
+<p><small><em>The flavour of the [Eurasian] continent which the Silk Road transverses, sophisticated Parisian elegance, Spanish passion, African energy, the marine flavor of the Caribbean, all of them are cooked up in a stew. Then this stew gets taken to America, the inclusive, all-embracing continent, where the final spices are added. Then, after, I wonder ‘What will happen if I add one more spice?’ This is what I have to do. I am almost obsessed by this conviction. In short, I let the music travel across the Pacific to add a drop of soy sauce to it. This is what I want to do. I name this form ‘Soy Sauce Music’“</em></small></p>
+</blockquote>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p><br> <small>Haruomi Hosono, quoted in Shūhei Hosokawa, “Soy Sauce Music: Haruomi Hosono and Japanese Self-Orientalism,” in Philip Hayward (ed), <strong>Widening the Horizon: Exoticism in Postwar Popular Music</strong> (Sydney: Perfect Beat Publications, 1999): 123.</small></p>
+</div></div><blockquote class="blockquote">
+<p><small><em>‘Japan’ is not an inferior Orient any more and, no less importantly, has become ‘pleasurably exotic’ to the Japanese themselves.</em></small></p>
+</blockquote>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p><br> <small>Koichi Iwabuchi,“Complicit Exoticism—Japan and Its Other.” <strong>Continuum</strong>, 8.2 (1994): 70).</small></p>
+</div></div><section id="i.-paradise" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="i.-paradise">I. Paradise</h2>
+<div>
+<video autoplay="" loop="" muted="" playsinline="" controls="false" width="100%">
+<source src="video/dronestagram-rarotonga.mp4" type="video/mp4">
+</video>
+</div>
+<p><br> The island of Rarotonga is located in the South Pacific some 3,233 kilometers (approximately 2,008 miles) northeast of New Zealand; a flight from Auckland takes a little over four hours to get there. The largest of the archipelago known since the nineteenth century as the Cook Islands, in honor of James Cook’s visits in the late eighteenth century, it’s a little under seven miles in length with a population of around 10,500. According to Lonely Planet, its first recorded European visitor was Philip Goodenough, captain of the&nbsp;‘Cumberland’,&nbsp;whose arrival in 1814 reportedly resulted in skirmishes with the local inhabitants. Ostensibly a sovereign island nation today, the Cook Islands has historically been a protectorate of the New Zealand government. The volcanic island is the quintessential exotic paradise of white sand beaches, lagoons, and reefs, and it comes as no surprise that its main source of revenue is as a resort for the 100,000 or so tourists that reportedly visit it annually. Its spectacular landscape makes it a popular subject on <a href="https://www.dronestagr.am/tag/rarotonga/"><strong>Dronestagram</strong></a>. Simon Winchester’s 500-page classic survey <strong>The Pacific</strong> (1991) makes no reference to Rarotonga, and only mentions the Cook Islands twice in passing.</p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p><br><br> <a href="img/rarotonga.jpg" class="lightbox" data-gallery="rarotonga"><img src="img/rarotonga.jpg" class="img-fluid"></a><br><br></p>
+<p><a href="img/dronestagram-rarotonga.jpg" class="lightbox" data-gallery="rarotonga"><img src="img/dronestagram-rarotonga.jpg" class="img-fluid"></a><br><br></p>
+<p><a href="img/rarotonga-map.jpg" class="lightbox" data-gallery="rarotonga"><img src="img/rarotonga-map.jpg" class="img-fluid"></a></p>
+</div></div><div class="page-columns page-full"><p>Rarotonga also happens to have been the location for the shooting of the 1983 film, <strong>Merry Christmas, Mr.&nbsp;Lawrence</strong>. A prisoner-of-war drama set in Japanese-occupied Java in 1942, the film was based on the fictionalized account of his experiences in a Japanese prisoner-of-war camp in Java of the South African writer Laurens Van Der Post, a novella originally titled <strong>The Seed and the Sower</strong> (1963). An initiative of British producer Jeremy Thomas, the film was unusual against the background of the jingoistic genre of British POW movies since <strong>Bridge on the River Kwai</strong> (1957) in being an Anglo-Japanese co-production: directed by Japanese auteur Nagisa Ōshima, it was produced by an almost entirely Japanese crew with a cast that starred electronic musician Ryūichi Sakamoto, TV comedian Takeshi Kitano before his career as a filmmaker, British actor Tom Conti, and British rock musician David Bowie. Sakamoto composed the soundtrack, the first of what was to become a long career as a film composer, which won a BAFTA award. Its main theme proved so popular that Sakamoto grew weary of the relentless demands to play it.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><br><a href="img/seed-sower.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="img/seed-sower.jpg" class="img-fluid"></a></span></div></div>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/LF9_9MZyQGo" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+</div></div><p>The film’s plot hinged on what was taken to be the homoerotic fixation of the camp’s Japanese commander, Captain Yonoi (Sakamoto), with the rebellious British officer Jack Celliers (Bowie).The film’s most dramatic moment is when Celliers breaks rank to protect the British soldiers’ commander, who is about to be executed by Yonoi, first defiantly blocking his path and then resolutely planting a kiss on each of Yonoi’s cheeks, a deliberate violation of the Samurai <em>bushidō</em> code of honor that triggers such conflicting feelings in Yonoi that he collapses. Celliers subsequently finds himself buried up to his neck in sand as punishment for the outrage. Before he dies, Yonoi visits him and snips off a lock of his hair as a memento.</p>
+<p>The bulk of the film was shot over five weeks with Rarotonga doubling as wartime Java, while several flashback sequences from Cellier’s schooldays in South Africa were shot in Auckland. According to Jeremy Thomas, the choice of such a remote location for the shoot was in part economic, involving favorable tax conditions offered by the New Zealand government; in addition, the resemblance of the island’s physical geography to that of Java, its natural beauty, and its isolation from the prying eyes of fans and paparazzi, also made it highly desirable.</p>
+<p>While the film enjoyed considerable success at the time of its release, screening at Cannes and subsequently around the globe, the resurgence of interest in it over the past decade is in itself a subject for reflection. In 2010, it was reissued on <a href="https://www.criterion.com/films/27512-merry-christmas-mr-lawrence">Blu-Ray</a> and DVD in the prestigious Criterion Collecton series. In addition to an HD digital transfer, the release included several hours of special features, including a BBC making-of documentary, archival and new interviews with cast and crew, and a brochure featuring an article by Chuck Stephens titled “Lawrence of Shinjuku” and interviews with Ōshima and Kitano. In 2016, Sakamoto’s soundtrack was reissued on vinyl, CD, and digital formats, with newly-commissioned artwork by Belgian illustrator Laurent Durieux, that mimicked the modern woodblock prints of the Shin Hanga movement.</p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p><a href="https://www.criterion.com/films/27512-merry-christmas-mr-lawrence"><img src="img/blu-ray-poster.jpeg" class="lightbox img-fluid"></a></p>
+</div><div class="">
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/T8JdWs3jtcs" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+</div></div>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><a href="img/mcml-soundtrack-pic.jpg" class="lightbox" data-gallery="kawase" data-glightbox="description: .lightbox-desc-6;"><img src="img/mcml-soundtrack-pic.jpg" class="img-fluid" size="750"></a></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><a href="img/kawase-cropped.png" class="lightbox" data-gallery="kawase" data-glightbox="description: .lightbox-desc-7;"><img src="img/kawase-cropped.png" class="img-fluid"></a></p>
+</div>
+</div>
+</div>
+<hr>
+<p>At this point, I should probably issue a disclaimer, which may be a source of disappointment to some. I am not interested here in producing another textual analysis of the narrative and character relationships of <strong>Merry Christmas, Mr.&nbsp;Lawrence</strong>; nor in the similarities and differences between the film and Laurens VDP’s original novella; nor am I concerned with placing the film within the auteurist framework of Nagisa Ōshima’s work, or for that matter Takeshi Kitano’s. I will not be assessing the film’s historical accuracy as a representation of its subject, nor considering its relationship to the historical genre of the prisoner-of-war film. I am interested in turning inside-out the framework within which the film has been exclusively approached to date, by reading it through the lens not of cinema studies but of popular music studies—an approach that doesn’t seem altogether unreasonable given that both of the film’s two leading actors were highly respected popular musicians.</p>
+<div class="page-columns page-full"><p>As Ryūichi Sakamoto puts it in one of his many interviews about the film, <strong>Merry Christmas, Mr.&nbsp;Lawrence</strong> was “more than a movie—more like an event,” and this is how I also want to approach the film here. My primary focus is less on the film itself than on the narratives and discourses surrounding it, in the interviews with Jeremy Thomas, Ryūichi Sakamoto, Tom Conti, and the film’s writer, Paul Meyersberg, included on the Criterion reissue. Ōshima and Bowie are structuring absences throughout these interviews, not present on camera yet continually referenced in the narratives of the film’s production, and continually visible in <em>vérité</em>-style film stills taken during the shoot. From these narratives there emerges a kind of shadow version of <strong>Merry Christmas, Mr.&nbsp;Lawrence</strong> that, while it may lack the emotional intensity of the film itself, is no less fascinating. Unlike Les Blank and Maureen Gosling’s documentary and book about the location shoot of Werner Herzog’s <strong>Fitzcarraldo</strong> in the Amazon jungle, <strong>Burden of Dreams</strong>, or the documentary <strong>Hearts of Darkness</strong>, about the production of Coppola’s <strong>Apocalypse Now</strong>, or <strong>In Search of Kundun</strong>, about that of Martin Scorsese’s <strong>Kundun</strong>, or even <strong>Lost in La Mancha</strong> (about Terry Gilliam’s efforts to remake Don Quiojte), we do not have the benefit of a complete making-of documentary, although the 30-minute BBC short <strong>The Oshima Gang</strong> is like a rudimentary sketch for one. Instead, this movie-behind-the-scenes-of-the-movie is glimpsed only in fragments across multiple audiovisual texts, both visible and narrated. This doesn’t mean either, however, that I’m <strong>not</strong> merely going to produce an anecdotal account of the film’s production.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><br><br><br><br><a href="img/bowie-oshima.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-8" data-glightbox="description: .lightbox-desc-8;"><img src="img/bowie-oshima.jpg" class="img-fluid"></a></span></div></div>
+<p>What interests me about the film is that it was in its time a unique example (at least to my knowledge) of a British-Japanese co-production, and has remained so to this day; a British prisoner-of-war drama in the River Kwai lineage, but with a Japanese director, cinematographer, production designer, and other crew. It thus complicates what was later to become the paradigm of “world cinema” as a collection of national cinemas associated with the work of film auteurs of the nationality in question. While the limitations of that paradigm have in recent decades become increasingly evident, <strong>Merry Christmas, Mr.&nbsp;Lawrence</strong> shows that they have already been so since at least the 1980s (and I’m not even going to mention <strong>Doctor Zhivago</strong> and other 1960s co-productions).</p>
+<p>I want to contextualize the film within a broader history in which film is only one element, that of postwar creative encounters and collaborations between Japanese and Anglo-American musicians. Interestingly, given that the film’s two lead actors were both popular musicians, examples of such collaborations are a lot easier to find in popular music than in cinema, the archetype being the artistic collaboration between <a href="https://9dream.netlify.app/imagine/">Yoko Ono and John Winston Lennon</a> (which I have written about elsewhere). Over the decade preceding <strong>Merry Christmas, Mr.&nbsp;Lawrence</strong>, Japanese musicians like the London-based Sadistic Mika Band and Sakamoto’s own band, The Yellow Magic Orchestra (who appeared on the US TV show <strong>Soul Train</strong>), had achieved international recognition in the UK and US, while British bands like the appropriately-named Japan looked east for inspiration. This was in part the cultural context from which <strong>Merry Christmas, Mr.&nbsp;Lawrence</strong> emerged, while the film itself was a catalyst for later collaborations: between Jeremy Thomas and Ōshima in the latter’s film <strong>Gohatto</strong>; and between Sakamoto and Japan’s former vocalist David Sylvian, who performed the film’s theme song on the single release “Forbidden Colours.”</p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p></p><div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/XCfLnopIhng" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div><br><p></p>
+<p></p><div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/ZgufrHPagrA" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div><br><p></p>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/lNazfECMKcA" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+</div></div><section id="ii.-us-and-them" class="level2">
+<h2 class="anchored" data-anchor-id="ii.-us-and-them">II. Us and Them</h2>
+<p>For a little over a month, then, early in the 1980s, an unprecedented assortment of British and Japanese film producers, actors, and musicians came together on a remote Pacific Island together to make a movie. By far the most common question from interviewers was some version of “what was it like to work with X?” While everyone is essentially asked what it was like to work with everyone else, the centre of attention was probably the encounter between the filmmaker and the rockstar, Ōshima and Bowie. Sakamoto mentions playing rock’n’roll standards with Bowie in the downtime after the day’s shoot on a drum kit at the local bar, with Bowie singing and playing guitar. Ōshima is asked how it was working with the comedian Kitano; and so on. What resulted from these encounters, it becomes clear from the interviews, was a kind of crash-course on each side’s language and culture: Jeremy Thomas, for example, recounts that between the year and a half or so between their initial scouting visit to Rarotonga and the shoot itself, Ōshima had acquired enough English to direct the British actors. Tom Conti, who spoke no Japanese yet appears to speak it fluently as Lawrence in the film, reports the intensive language drilling he received from Roger Pulvers, a New Yorker bilingual in Japanese (and numerous other languages.) Sakamoto had to speak English with Conti in a number of scenes. Referencing a scene in the film in which a Japanese soldier is beheaded after performing the ritual suicide known as <em>seppuku</em>, Jeremy Thomas recounts his amazement at seeing Ōshima’s elderly cinematographer, Tōichirō Narashima, cleanly slice the head off a mannequin with a sword to show a Japanese actor the proper way to do so, only to learn that Narashima had acquired the skill as a soldier during the war. Perhaps the most interesting discovery for the British, however, was Ōshima’s very different approach to the production process itself. [CLIP: JT] economic use of film by Japanese producers.</p>
+</section>
+<section id="iii.-exotica" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="iii.-exotica">III. Exotica</h2>
+<p>From Diderot to Paul Gauguin, the South Pacific has in the European imagination been the privileged site of the exotic, and the term comes up repeatedly in discussions of the film’s production. Jeremy Thomas describes making the film as “sort of like a journey into the exotic, under controlled conditions;” for Tom Conti, “it wasn’t a little movie set in London, and getting in and out of taxis—it was going to an exotic place, with a big film crew, to work with this exotic director.”</p>
+<div class="page-columns page-full"><p>In his study of the music of Haruomi Hosono (later in the decade to become Sakamoto’s bandmate in the Yellow Magic Orchestra), Shūhei Hosokawa notes that “the exotic gaze of the West covers not only Japan but also the ‘Rest’ of the globe.” As Hosokawa describes, Hosono’s series 1970s “tropical dandy” albums pastiched the international styles of popular music, including the western orientalist and exoticist music of Americans like Martin Denny and Les Baxter—a mélange of international styles with the addition of a drop of Japanese “spice” that Hosono dubbed “Soy Sauce Music”. (Hosokawa also notes that “what is exotic for the west is also recognised as such by the Japanese,” the only exception being, of course, the exoticism of Japan itself (1999: 131).) While deconstructing the musical simulacra of western exoticists like Denny, as Hosokawa demonstrates, Hosono was no less concerned with critiquing the cultural and musical insularity of Japan, and Tokyo in particular. For Hosono, Tokyo was an island containing lots of other isolated islands, against which he embraced the archipelagos of the Caribbean, Hawaii, and the islands that include Okinawa, which allow for the possibility of cultural exchange and mixing.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><br><br><br><br><a href="img/tropical-dandy.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-9"><img src="img/tropical-dandy.jpg" class="img-fluid"></a></span></div></div>
+<p>Hosono’s critique of Japanese cultural insularity and his concept of the archipelago provide an interesting framework for thinking about the island of Rarotonga within an archipelago of the Cook Islands, as a location for for the encounter of two tropical dandies, in the form of Bowie and Sakamoto, and the cultural mixing and exchange that resulted from it. It also provides a way of thinking about the nature of the exotic in <strong>Merry Christmas, Mr.&nbsp;Lawrence</strong>, whether in terms of the British perception of the Japanese or vice versa. Applying Hosono’s concept of “Soy Sauce Music” to film, could Merry Christmas, Mr.&nbsp;Lawrence be considered a “Soy Sauce Movie”?</p>
+<p>This brings us, inevitably, to Sakamoto’s soundtrack to the film, a work of electronic exotica which can be seen as a counterpart to Hosono’s “Soy Sauce Music” of the previous decade. Like Hosono’s music, Sakamoto’s is centrally concerned with exploring the exotic in music, and deconstructing the simplistic us-them binary of East and West by looking at the cultural self, as Hosono calls it (quoting Brecht), “through the eyes of a stranger.” Asked about “the theme of East meets West” in an interview, Sakamoto mentions the band he formed with Hosono and Yukihiro Takahashi, Yellow Magic Orchestra, which “broke some kind of border between East and West.” The soundtrack to <strong>Merry Christmas, Mr.&nbsp;Lawrence</strong> was conceived along similar lines: “The music I wanted to write was something very far from both West and East, as if it comes from nowhere, in other words, it must sound very nostalgic and at the same time very exotic for both western people and eastern people—Asians. It wasn’t easy!” On the one hand, he explains, the theme of Christmas evoked the sound of European church bells; on the other, the narrative’s location in Java was evocative of gamelan music (he’d visited another location of the exotic imagination, Bali, sometime before). The soundtrack that resulted was inspired by both but sounded like neither, an electronic “bamboo music” produced, appropriately, on a sampler. While using the pentatonic scale heard by western exoticists as the sound of “oriental” music, the theme music didn’t use gamelan tunings or even gamelan instruments at all: the metallic, gamelan-like samples were produced by striking wine glasses. Other than some piano and strings in places, the soundtrack is almost entirely electronic, produced with a sampler and synthesizer that work to prevent identifying it with any authentic musical tradition, whether western or Asian. If it sounds other-worldly, it’s because it’s meant to.</p>
+</section>
+<section id="iv.-through-the-eyes-of-a-stranger" class="level2">
+<h2 class="anchored" data-anchor-id="iv.-through-the-eyes-of-a-stranger">IV. Through the Eyes of a Stranger</h2>
+<p>To recapitulate: Haruomi Hosono’s tropical dandy records deconstructed insular conceptions of the “exotic”—whether in American or Japanese form—with the archipelago musics of the Caribbean, Hawaii, and Okinawa. His collaboration with Ryūichi Sakamoto and Yukihiro Takahashi as the Yellow Magic Orchestra similarly sought to break down the simplistic east-west binary in a music that both pastiched the German band Kraftwerk and parodied western techno-orientalist fantasies of Japan as “the future.” Sakamoto’s soundtrack to <strong>Merry Christmas, Mr.&nbsp;Lawrence</strong> was both a continuation of these earlier projects, a location-less, futuristic music that managed to sound as exotic to Japanese ears as it was to British and American ones. As a unique cultural event, the shooting of Merry Christmas, Mr.&nbsp;Lawrence itself arguably served a similar function for those who participated in it. For a few short weeks, on a South Pacific island in the early 1980s, it enabled a group of filmmakers and musicians to see themselves their own culture through the eyes of a stranger, as well as British and Japanese audiences in the the decades that followed. It was a process that has continued to this day, and arguably remains the film’s most lasting achievement.</p>
+<!-- ## V. Double Fantasy -->
+<!-- Summing up the continuing appeal of Merry Christmas, Mr. Lawrence in 2010, Jeremy Thomas commented: -->
+<!-- > the film still has a sort of currency in its values, and in today's warring planet, it is so strong. It says everything that we believe: we are victims of men who think they are right. So when you see that in a movie, subtly smuggled in by Ōshima, with a knockout punch at the end of the film---you show that film today to people, and they -->
+<!-- really get it. -->
+<!-- Rather than the film's universalism, however, I prefer to see its transnational appeal on both the British and Japanese side, as another instance of what in my book about the Japanese musician Cornelius I call a double fantasy. -->
+<hr>
+
+
+</section>
+</section></main></div>
+<div class="hidden" aria-hidden="true">
+<div class="glightbox-desc lightbox-desc-1">
+<blockquote class="blockquote">
+<p>David Bowie and Ryūichi Sakamoto on the set of <strong>Merry Christmas, Mr.&nbsp;Lawrence</strong></p>
+</blockquote>
+</div>
+<div class="glightbox-desc lightbox-desc-6">
+<p>Laurent Durieux, artwork for 2016 re-release of soundtrack to <strong>Merry Christmas, Mr.&nbsp;Lawrence</strong></p>
+</div>
+<div class="glightbox-desc lightbox-desc-7">
+<p>Hasui Kawase (1883-1953), <strong>Full Moon at Hiroura</strong> (1946).</p>
+</div>
+<div class="glightbox-desc lightbox-desc-8">
+<p>David Bowie and Nagisa Ōshima.</p>
+</div>
+</div>
+
+
+ <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+ <!-- /content -->
+<script>var lightboxQuarto = GLightbox({"closeEffect":"fade","descPosition":"bottom","loop":false,"openEffect":"fade","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
+
+
+
+
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>
